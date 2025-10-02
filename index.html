@@ -425,12 +425,28 @@
 
     <script src="js/jquery.js"></script>
     <script src="js/bootstrap.min.js"></script> 
-    <script src="js/mousescroll.js"></script>
-    <script src="js/smoothscroll.js"></script>
+
+ 
     <script src="js/jquery.prettyPhoto.js"></script>
     <script src="js/jquery.isotope.min.js"></script>
     <script src="js/jquery.inview.min.js"></script>
-    <script src="js/wow.min.js"></script>
+    
     <script src="js/custom-scripts.js"></script>
+
+ <script>
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    e.preventDefault();
+    const target = document.querySelector(this.getAttribute('href'));
+    const offset = 70; // altura de la barra fija
+    if (target) {
+      window.scrollTo({
+        top: target.offsetTop - offset,
+        behavior: 'smooth'
+      });
+    }
+  });
+});
+</script>
 </body>
 </html>
